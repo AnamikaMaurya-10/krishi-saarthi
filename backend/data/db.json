@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Ramesh Kumar",
+      "email": "ramesh@demo.com",
+      "passwordHash": "$2a$10$1A2rPiSfyN4oMayqLsRVzu26L8cW5WtOw.OYfy5DAOIo5ZAACRnM6",
+      "role": "farmer",
+      "farmerId": "f1"
+    },
+    {
+      "id": "u2",
+      "name": "Priya Devi",
+      "email": "priya@demo.com",
+      "passwordHash": "$2a$10$1A2rPiSfyN4oMayqLsRVzu26L8cW5WtOw.OYfy5DAOIo5ZAACRnM6",
+      "role": "farmer",
+      "farmerId": "f2"
+    },
+    {
+      "id": "u3",
+      "name": "Agriculture Officer",
+      "email": "officer@krishisaathi.demo",
+      "passwordHash": "$2a$10$1A2rPiSfyN4oMayqLsRVzu26L8cW5WtOw.OYfy5DAOIo5ZAACRnM6",
+      "role": "officer"
+    }
+  ],
+  "farmers": [
+    {
+      "id": "f1",
+      "userId": "u1",
+      "name": "Ramesh Kumar",
+      "village": "Bisra",
+      "district": "Sundargarh",
+      "state": "Odisha",
+      "crop": "Paddy",
+      "landAcres": 2.5,
+      "irrigation": "Rainfed",
+      "soilType": "Loamy",
+      "language": "English",
+      "phone": "9876543210",
+      "loanDueDate": "2026-09-09",
+      "concern": "Rainfall and market price",
+      "createdAt": "2026-08-28T00:00:00.000Z"
+    },
+    {
+      "id": "f2",
+      "userId": "u2",
+      "name": "Priya Devi",
+      "village": "Bargarh",
+      "district": "Bargarh",
+      "state": "Odisha",
+      "crop": "Paddy",
+      "landAcres": 4,
+      "irrigation": "Canal",
+      "soilType": "Clay",
+      "language": "Hindi",
+      "phone": "9876501234",
+      "loanDueDate": "2026-10-03",
+      "concern": "Crop disease",
+      "createdAt": "2026-08-28T00:00:00.000Z"
+    }
+  ],
+  "interventions": []
+}
