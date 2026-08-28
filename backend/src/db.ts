@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import { Db } from "./types.js";
 
 const __filename = fileURLToPath(import.meta.url);
