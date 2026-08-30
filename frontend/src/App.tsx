@@ -1433,7 +1433,9 @@ function Onboarding({
           districtId: "",
 
           block: "",
-          blockId: ""
+          blockId: "",
+          latitude: null,
+          longitude: null,
         })
       );
 
@@ -1889,15 +1891,20 @@ function Onboarding({
   ======================================================= */
 
   const enterManualLocation =
-    () => {
-      setError("");
-      setLocationMessage("");
+  () => {
+    setError("");
+    setLocationMessage("");
 
-      setLocationStage(
-        "manual"
-      );
-    };
+    setData((previous: any) => ({
+      ...previous,
+      latitude: null,
+      longitude: null,
+    }));
 
+    setLocationStage(
+      "manual"
+    );
+  };
   /* =======================================================
      CONFIRM DETECTED LOCATION
   ======================================================= */
