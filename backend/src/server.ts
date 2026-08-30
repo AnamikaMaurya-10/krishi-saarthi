@@ -6,10 +6,35 @@ import routes from "./routes.js";
 const app = express();
 const port = Number(process.env.PORT || 4000);
 
-app.use(cors({
-  origin: process.env.FRONTEND_ORIGIN?.split(",") ?? "http://localhost:5173",
-  credentials: true
-}));
+const allowedOrigins = (process.env.FRONTEND_ORIGIN || "")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow requests without an Origin header.
+      // Useful for direct API/browser health checks.
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      const isAllowed =
+        allowedOrigins.includes(origin) ||
+        /^https:\/\/krishi-saarthi-[a-z0-9-]+-anamikamaurya-10s-projects\.vercel\.app$/i.test(
+          origin
+        );
+
+      if (isAllowed) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
